@@ -1,31 +1,28 @@
+// SPDX-License-Identifier: MIT
 pragma solidity 0.8.13;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
 /**
  * BusyBee BZB Token
  */
 
-contract BusyBeeToken is ERC20 {
+ // Mintable; Upgradable; Unlimited Supply  
 
-    address public minter;
-    mapping(address => uint) public balances; // To create mapping for balances
-
-    constructor() ERC20("BusyBeeToken", "BZB") {
-        minter = msg.sender; // To set original minter = the contract creator
-    }
-    
-    function mint(address receiver, uint amount) external {
-        require(msg.sender == minter);
-        balanceOf[receiver] += amount;
-        totalSupply += amount; // MaxSupply is unlimited
+contract BusyBeeToken is Initializable, ERC20Upgradeable, OwnableUpgradeable {
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    constructor() {
+        _disableInitializers();
     }
 
-    function totalSupply() public view returns (uint256) {
-        return totalSupply; // To track the amount of token in circulation / minted
+    function initialize() initializer public {
+        __ERC20_init("BusyBeeToken", "BZB");
+        __Ownable_init();
     }
 
-    function balanceOf(address _owner) public view returns (uint256) {
-        return balances[_owner]; // To return the balance of _owner
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
     }
 }
