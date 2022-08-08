@@ -14,11 +14,17 @@ contract HiveManager is
   IBeeToken public BEE;
   IHiveToken public HIVE;
 
+  uint256 public initialBlockHeight;
+  uint256 public initialBlockTime;
+
   function initialize(address _bee, address _hive) external initializer {
     __ReentrancyGuard_init();
     __Ownable_init();
     BEE = IBeeToken(_bee);
     HIVE = IHiveToken(_hive);
+
+    initialBlockHeight = block.number;
+    initialBlockTime = block.timestamp;
   }
 
   function mintReward(address participant, uint256 amount)
