@@ -1,29 +1,58 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// When running the script with `npx hardhat run <script>` you'll find the Hardhat
-// Runtime Environment's members available in the global scope.
-import { ethers } from 'hardhat';
+import { ContractFactory } from "ethers";
+import { ethers, upgrades } from "hardhat";
 
 async function main() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
+  const [deployer] = await ethers.getSigners();
+  console.log("Deploying contracts with the account: " + deployer.address);
+  console.log(ethers.utils.formatUnits(await deployer.getGasPrice(), "gwei"));
 
-  // We get the contract to deploy
-  const Greeter = await ethers.getContractFactory('Greeter');
-  const greeter = await Greeter.deploy('Hello, Hardhat!');
+  // deploy BEE
+  const BEE = await ethers.getContractFactory("BeeToken");
+  const bee = await upgrades.deployProxy(BEE as ContractFactory, undefined, {
+    initializer: "initialize",
+  });
+  await bee.deployed();
+  console.log("BEE deployed to:", bee.address);
+  console.log(
+    "BEE Implementation Contract: ",
+    await upgrades.erc1967.getImplementationAddress(bee.address)
+  );
 
-  await greeter.deployed();
+  // deploy HIVE
+  const HIVE = await ethers.getContractFactory("HiveToken");
+  const hive = await upgrades.deployProxy(HIVE as ContractFactory, undefined, {
+    initializer: "initialize",
+  });
+  await hive.deployed();
+  console.log("HIVE deployed to:", hive.address);
+  console.log(
+    "HIVE Implementation Contract: ",
+    await upgrades.erc1967.getImplementationAddress(hive.address)
+  );
 
-  console.log('Greeter deployed to:', greeter.address);
+  // deploy MANAGER
+  const MANAGER = await ethers.getContractFactory("HiveManager");
+  const manager = await upgrades.deployProxy(
+    MANAGER as ContractFactory,
+    [bee.address, hive.address],
+    {
+      initializer: "initialize",
+    }
+  );
+  await manager.deployed();
+  console.log("MANAGER deployed to:", manager.address);
+  console.log(
+    "MANAGER Implementation Contract: ",
+    await upgrades.erc1967.getImplementationAddress(manager.address)
+  );
+
+  // proxy admin should be the same for all 3 contracts
+  console.log(
+    "ProxyAdmin Contract: ",
+    await upgrades.erc1967.getAdminAddress(bee.address)
+  );
 }
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
