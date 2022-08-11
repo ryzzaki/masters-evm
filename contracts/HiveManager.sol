@@ -14,6 +14,7 @@ contract HiveManager is
 {
   using SafeMathUpgradeable for uint256;
 
+  // solhint-disable var-name-mixedcase
   IBeeToken public BEE;
   IHiveToken public HIVE;
 

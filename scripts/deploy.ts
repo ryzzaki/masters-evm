@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unpublished-import */
 import { ContractFactory } from "ethers";
 import { ethers, upgrades } from "hardhat";
 
@@ -45,6 +46,14 @@ async function main() {
     "MANAGER Implementation Contract: ",
     await upgrades.erc1967.getImplementationAddress(manager.address)
   );
+
+  const beeTx = bee.setManager(manager.address);
+  await beeTx.wait();
+  console.log("BEE manager set!");
+
+  const hiveTx = hive.setManager(manager.address);
+  await hiveTx.wait();
+  console.log("HIVE manager set!");
 
   // proxy admin should be the same for all 3 contracts
   console.log(
