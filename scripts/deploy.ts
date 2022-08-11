@@ -47,11 +47,11 @@ async function main() {
     await upgrades.erc1967.getImplementationAddress(manager.address)
   );
 
-  const beeTx = bee.setManager(manager.address);
+  const beeTx = await bee.setManager(manager.address);
   await beeTx.wait();
   console.log("BEE manager set!");
 
-  const hiveTx = hive.setManager(manager.address);
+  const hiveTx = await hive.setManager(manager.address);
   await hiveTx.wait();
   console.log("HIVE manager set!");
 

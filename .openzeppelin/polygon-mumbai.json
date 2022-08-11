@@ -1,0 +1,531 @@
+{
+  "manifestVersion": "3.2",
+  "admin": {
+    "address": "0xD52FB32CE2d3F3062bb48f51F4F988F6b66eBe77",
+    "txHash": "0xfbfddaa87f2ee1706936e02aac91d9067b925d8008c7605e2fa341aa3674a84a"
+  },
+  "proxies": [
+    {
+      "address": "0x61b1c85dA8845aa0499aB07730C61D00d0833E16",
+      "txHash": "0x0ddc35f78488d1fc0c35cc313f5c584624e163bc7d1b4ca027082acefe69b922",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x4E1d0b23f3187552e0b05B993029be841e060097",
+      "txHash": "0x58490903a15ce671d99be22aa01fe5167e38812815985ac4f19ca85ee798de08",
+      "kind": "transparent"
+    },
+    {
+      "address": "0x1832D1D8922ADe2f91A5A3d07Ce5503dC851eC4a",
+      "txHash": "0xecbc4aa23e6eed6c0ab7cb0051aaa8279215b6330910c0fa0b65d90940d2ecd6",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "dfbc43d121d883cad4f2b9e6ec1e556f1c6bd975437b2113ba40d2330aa91045": {
+      "address": "0x22ce75e00CB50166a4D16a27499bb789C1807023",
+      "txHash": "0x37e2a087354afa1f73e944c306fe39ba929417feaa7775842fbc683473eda617",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "compiled/BeeToken.sol:380",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "compiled/BeeToken.sol:385"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "compiled/BeeToken.sol:492"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/BeeToken.sol:528"
+          },
+          {
+            "label": "_allowances",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/BeeToken.sol:530"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_uint256",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/BeeToken.sol:532"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/BeeToken.sol:534"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/BeeToken.sol:535"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "56",
+            "type": "t_array(t_uint256)45_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/BeeToken.sol:924"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/BeeToken.sol:942"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/BeeToken.sol:1017"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/BeeToken.sol:1053"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/BeeToken.sol:1089"
+          },
+          {
+            "label": "managerContract",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_address",
+            "contract": "BeeToken",
+            "src": "compiled/BeeToken.sol:1103"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]",
+            "numberOfBytes": "1440"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "2b96faf82ab67ac96a7954890b36ad4df84d7d3c8a4a5d5d33321c88fe83e14b": {
+      "address": "0x00F217598EB78aD2Da1b8236afcfcFD941F5Ff69",
+      "txHash": "0x9c5089c149e94e7a3331bb92bae6380a16784c3e59f59948dc629a6f2c336b18",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "compiled/HiveToken.sol:380",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "compiled/HiveToken.sol:385"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "compiled/HiveToken.sol:492"
+          },
+          {
+            "label": "_balances",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_mapping(t_address,t_uint256)",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/HiveToken.sol:528"
+          },
+          {
+            "label": "_allowances",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/HiveToken.sol:530"
+          },
+          {
+            "label": "_totalSupply",
+            "offset": 0,
+            "slot": "53",
+            "type": "t_uint256",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/HiveToken.sol:532"
+          },
+          {
+            "label": "_name",
+            "offset": 0,
+            "slot": "54",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/HiveToken.sol:534"
+          },
+          {
+            "label": "_symbol",
+            "offset": 0,
+            "slot": "55",
+            "type": "t_string_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/HiveToken.sol:535"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "56",
+            "type": "t_array(t_uint256)45_storage",
+            "contract": "ERC20Upgradeable",
+            "src": "compiled/HiveToken.sol:924"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveToken.sol:942"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveToken.sol:1017"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveToken.sol:1053"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveToken.sol:1089"
+          },
+          {
+            "label": "managerContract",
+            "offset": 0,
+            "slot": "201",
+            "type": "t_address",
+            "contract": "HiveToken",
+            "src": "compiled/HiveToken.sol:1103"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]",
+            "numberOfBytes": "1440"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+            "label": "mapping(address => mapping(address => uint256))",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "175ca6b2aa289b27fd941cfed8637cfbaa4f97c101595c8f3058272d30ec446a": {
+      "address": "0xBEc47999DEAcDF639A0644cdaA02C28EFd7260BB",
+      "txHash": "0x6c545ed8e83aedc3becf8e13fab9d3aa94425149dd784c5380d342635a005fe1",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "compiled/HiveManager.sol:273",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "compiled/HiveManager.sol:278"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "compiled/HiveManager.sol:385"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveManager.sol:403"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveManager.sol:478"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveManager.sol:514"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveManager.sol:550"
+          },
+          {
+            "label": "BEE",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_contract(IBeeToken)1016",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:869"
+          },
+          {
+            "label": "HIVE",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_contract(IHiveToken)1006",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:870"
+          },
+          {
+            "label": "initialBlockHeight",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:873"
+          },
+          {
+            "label": "initialBlockTime",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:874"
+          },
+          {
+            "label": "lambda",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:876"
+          },
+          {
+            "label": "nZero",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:877"
+          },
+          {
+            "label": "exponent",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:878"
+          },
+          {
+            "label": "base",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:879"
+          },
+          {
+            "label": "exp",
+            "offset": 0,
+            "slot": "159",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:880"
+          },
+          {
+            "label": "one",
+            "offset": 0,
+            "slot": "160",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:881"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IBeeToken)1016": {
+            "label": "contract IBeeToken",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IHiveToken)1006": {
+            "label": "contract IHiveToken",
+            "numberOfBytes": "20"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    }
+  }
+}
