@@ -4,6 +4,7 @@ pragma solidity 0.8.13;
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
+import {SafeMathUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/math/SafeMathUpgradeable.sol";
 import "./TokenInterfaces.sol";
 
 contract HiveManager is
@@ -11,17 +12,21 @@ contract HiveManager is
   OwnableUpgradeable,
   ReentrancyGuardUpgradeable
 {
+  using SafeMathUpgradeable for uint256;
+
   IBeeToken public BEE;
   IHiveToken public HIVE;
 
+  // remain as constants
   uint256 public initialBlockHeight;
   uint256 public initialBlockTime;
-  uint public lambda = 2; // preset decay constant Lambda
-  uint public N_0 = 10; // preset initial exchange rate at time 0
-  uint256 public N_t = N_0 * exp ^ (-lambda * block.number); // exchange rate at time T with decay
-  
-  // get user input of the amount of $BEE to be exchanged for $HIVE
-  function get() => exchangeAmount
+
+  uint256 public lambda; // preset decay constant Lambda
+  uint256 public nZero; // preset initial exchange rate at time 0
+  uint256 public exponent;
+  uint256 public base;
+  uint256 public exp;
+  uint256 public one;
 
   function initialize(address _bee, address _hive) external initializer {
     __ReentrancyGuard_init();
@@ -31,6 +36,24 @@ contract HiveManager is
 
     initialBlockHeight = block.number;
     initialBlockTime = block.timestamp;
+
+    one = 1;
+    nZero = 10; // preset initial exchange rate at time 0
+    lambda = 2; // preset decay constant Lambda
+    base = 1000;
+    exponent = 2718;
+    exp = exponent.div(base);
+  }
+
+  function calculateExchangeRate(uint256 amount)
+    internal
+    view
+    returns (uint256)
+  {
+    uint256 difference = block.number - initialBlockHeight;
+    uint256 exchangeRate = nZero * one.div(exp**(lambda * difference));
+    uint256 exchangeAmount = amount.div(exchangeRate);
+    return exchangeAmount;
   }
 
   function mintReward(address participant, uint256 amount)
@@ -44,22 +67,16 @@ contract HiveManager is
     BEE.transfer(participant, amount);
   }
 
-  function convictionBurn(address participant, uint256 amount, uint256 N_t )
-    external
-    nonReentrant
-  {
-    // check if there is enough $BEE for exchange
-    require(
-      BEE.balanceOf(address participant) > N_t; "There is not enough $BEE for $HIVE"
-      );
-
+  function convictionBurn(uint256 amount) external nonReentrant {
+    address participant = _msgSender();
     // transfer participant's tokens to this address
     BEE.transferFrom(participant, address(this), amount);
     // burn the tokens on this address
     BEE.burn(participant, amount);
-    // mint governance tokens @TO-DO linear decay equation is needed
-    HIVE.mint(exchangeAmount.mul(N_t));
+    // mint governance tokens
+    uint256 exchangeAmount = calculateExchangeRate(amount);
+    HIVE.mint(exchangeAmount);
     // transfer the amount of governance tokens to the participant
-    HIVE.transfer(participant, exchangeAmount.mul(N_t));
+    HIVE.transfer(participant, exchangeAmount);
   }
 }
