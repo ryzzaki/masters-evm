@@ -897,15 +897,14 @@ contract HiveManager is
     exp = exponent.div(base);
   }
 
-  function calculateExchangeRate(uint256 amount)
-    internal
+  function calculateExchangeAmount(uint256 amount)
+    public
     view
     returns (uint256)
   {
     uint256 difference = block.number - initialBlockHeight;
-    uint256 exchangeRate = nZero * one.div(exp**(lambda * difference));
-    uint256 exchangeAmount = amount.div(exchangeRate);
-    return exchangeAmount;
+    return
+      amount.div(nZero * one.div(exponent.div(base)**(lambda.mul(difference))));
   }
 
   function mintReward(address participant, uint256 amount)
@@ -926,7 +925,7 @@ contract HiveManager is
     // burn the tokens on this address
     BEE.burn(participant, amount);
     // mint governance tokens
-    uint256 exchangeAmount = calculateExchangeRate(amount);
+    uint256 exchangeAmount = calculateExchangeAmount(amount);
     HIVE.mint(exchangeAmount);
     // transfer the amount of governance tokens to the participant
     HIVE.transfer(participant, exchangeAmount);

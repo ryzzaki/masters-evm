@@ -526,6 +526,364 @@
           }
         }
       }
+    },
+    "8ad732b22bde6cfff92a0cefe747e032ebcc8142d8c221847cf201f9e3d0aee7": {
+      "address": "0xEaDD8d2cf1f7CacB540772873aBcAEb9b610E9D6",
+      "txHash": "0xf812b24b5ec2b9be8d8e90bdc29b8cdf76be0cc4ed350a063909495d62856fac",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "compiled/HiveManager.sol:273",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "compiled/HiveManager.sol:278"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "compiled/HiveManager.sol:385"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveManager.sol:403"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveManager.sol:478"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveManager.sol:514"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveManager.sol:550"
+          },
+          {
+            "label": "BEE",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_contract(IBeeToken)1016",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:869"
+          },
+          {
+            "label": "HIVE",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_contract(IHiveToken)1006",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:870"
+          },
+          {
+            "label": "initialBlockHeight",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:873"
+          },
+          {
+            "label": "initialBlockTime",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:874"
+          },
+          {
+            "label": "lambda",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:876"
+          },
+          {
+            "label": "nZero",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:877"
+          },
+          {
+            "label": "exponent",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:878"
+          },
+          {
+            "label": "base",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:879"
+          },
+          {
+            "label": "exp",
+            "offset": 0,
+            "slot": "159",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:880"
+          },
+          {
+            "label": "one",
+            "offset": 0,
+            "slot": "160",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:881"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IBeeToken)1016": {
+            "label": "contract IBeeToken",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IHiveToken)1006": {
+            "label": "contract IHiveToken",
+            "numberOfBytes": "20"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
+    },
+    "0a8b7e8fbaec5e6f3abf9fce4ff97695fbf42d18db9130501149802ebc5bf0a9": {
+      "address": "0xfF332c95CBB1Fa333f471b3F9eAd54286BE44eC5",
+      "txHash": "0x397fa83d650de1c96a81b3e9df78cf335afcdc09e5793a661b69018ef6634fb1",
+      "layout": {
+        "storage": [
+          {
+            "label": "_initialized",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8",
+            "contract": "Initializable",
+            "src": "compiled/HiveManager.sol:273",
+            "retypedFrom": "bool"
+          },
+          {
+            "label": "_initializing",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_bool",
+            "contract": "Initializable",
+            "src": "compiled/HiveManager.sol:278"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_array(t_uint256)50_storage",
+            "contract": "ContextUpgradeable",
+            "src": "compiled/HiveManager.sol:385"
+          },
+          {
+            "label": "_owner",
+            "offset": 0,
+            "slot": "51",
+            "type": "t_address",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveManager.sol:403"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "52",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "OwnableUpgradeable",
+            "src": "compiled/HiveManager.sol:478"
+          },
+          {
+            "label": "_status",
+            "offset": 0,
+            "slot": "101",
+            "type": "t_uint256",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveManager.sol:514"
+          },
+          {
+            "label": "__gap",
+            "offset": 0,
+            "slot": "102",
+            "type": "t_array(t_uint256)49_storage",
+            "contract": "ReentrancyGuardUpgradeable",
+            "src": "compiled/HiveManager.sol:550"
+          },
+          {
+            "label": "BEE",
+            "offset": 0,
+            "slot": "151",
+            "type": "t_contract(IBeeToken)1016",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:869"
+          },
+          {
+            "label": "HIVE",
+            "offset": 0,
+            "slot": "152",
+            "type": "t_contract(IHiveToken)1006",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:870"
+          },
+          {
+            "label": "initialBlockHeight",
+            "offset": 0,
+            "slot": "153",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:873"
+          },
+          {
+            "label": "initialBlockTime",
+            "offset": 0,
+            "slot": "154",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:874"
+          },
+          {
+            "label": "lambda",
+            "offset": 0,
+            "slot": "155",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:876"
+          },
+          {
+            "label": "nZero",
+            "offset": 0,
+            "slot": "156",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:877"
+          },
+          {
+            "label": "exponent",
+            "offset": 0,
+            "slot": "157",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:878"
+          },
+          {
+            "label": "base",
+            "offset": 0,
+            "slot": "158",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:879"
+          },
+          {
+            "label": "exp",
+            "offset": 0,
+            "slot": "159",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:880"
+          },
+          {
+            "label": "one",
+            "offset": 0,
+            "slot": "160",
+            "type": "t_uint256",
+            "contract": "HiveManager",
+            "src": "compiled/HiveManager.sol:881"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]",
+            "numberOfBytes": "1568"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]",
+            "numberOfBytes": "1600"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_contract(IBeeToken)1016": {
+            "label": "contract IBeeToken",
+            "numberOfBytes": "20"
+          },
+          "t_contract(IHiveToken)1006": {
+            "label": "contract IHiveToken",
+            "numberOfBytes": "20"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          },
+          "t_uint8": {
+            "label": "uint8",
+            "numberOfBytes": "1"
+          }
+        }
+      }
     }
   }
 }
