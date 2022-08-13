@@ -1,30 +1,30 @@
 {
   "manifestVersion": "3.2",
   "admin": {
-    "address": "0xD52FB32CE2d3F3062bb48f51F4F988F6b66eBe77",
-    "txHash": "0xfbfddaa87f2ee1706936e02aac91d9067b925d8008c7605e2fa341aa3674a84a"
+    "address": "0x5fB3fB19eC42967F0E74E989Bbdf102b4CDB14DB",
+    "txHash": "0x704dd60c7b2246ed876813c9728d6b1a7f0eda24a86cf4bccfd8f78878735834"
   },
   "proxies": [
     {
-      "address": "0x61b1c85dA8845aa0499aB07730C61D00d0833E16",
-      "txHash": "0x0ddc35f78488d1fc0c35cc313f5c584624e163bc7d1b4ca027082acefe69b922",
+      "address": "0x191FbF1ed0eE2C371A9e79C57C687B050E5BfaB5",
+      "txHash": "0xfb4116b76b3116b6718d8fad9e15969e9b40acc8e4cf04c280236552f1077e85",
       "kind": "transparent"
     },
     {
-      "address": "0x4E1d0b23f3187552e0b05B993029be841e060097",
-      "txHash": "0x58490903a15ce671d99be22aa01fe5167e38812815985ac4f19ca85ee798de08",
+      "address": "0x7FAb597E91B390C495DDf8dd6e87d233D760f11b",
+      "txHash": "0x81b5d843a769f490c52d127b30cbdad46d90aa16f11f31dc24f713846eaced10",
       "kind": "transparent"
     },
     {
-      "address": "0x1832D1D8922ADe2f91A5A3d07Ce5503dC851eC4a",
-      "txHash": "0xecbc4aa23e6eed6c0ab7cb0051aaa8279215b6330910c0fa0b65d90940d2ecd6",
+      "address": "0x9e59fE8c6158658e4ffcA8B7d4803299B33BcFdD",
+      "txHash": "0xde178f8e2a23785854ce4864a08fc3c6af3ba91b07567f26a05dfd0a5cad3cf2",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "dfbc43d121d883cad4f2b9e6ec1e556f1c6bd975437b2113ba40d2330aa91045": {
-      "address": "0x22ce75e00CB50166a4D16a27499bb789C1807023",
-      "txHash": "0x37e2a087354afa1f73e944c306fe39ba929417feaa7775842fbc683473eda617",
+    "80792583b82499cf05f9d546af05d25145c8d5988566446e4f017e3bd1469e41": {
+      "address": "0x3f2d3dDc7d70a9ecb15699d6b75BE97C7e56e665",
+      "txHash": "0xa54f33218d4e947be896616b7a40edb26d7f8736cc041c81ea1b086dbfaef96c",
       "layout": {
         "storage": [
           {
@@ -185,9 +185,9 @@
         }
       }
     },
-    "2b96faf82ab67ac96a7954890b36ad4df84d7d3c8a4a5d5d33321c88fe83e14b": {
-      "address": "0x00F217598EB78aD2Da1b8236afcfcFD941F5Ff69",
-      "txHash": "0x9c5089c149e94e7a3331bb92bae6380a16784c3e59f59948dc629a6f2c336b18",
+    "d919fde2dcfd8df9229c38108c4635401212e93069c46ef5b0837abdfe41e123": {
+      "address": "0x173fe402Fafc90d14B3c08F3beDc65Db4520F485",
+      "txHash": "0x04b39cbcb8dbbaa2b74c7d108b90cdef7cf23b7717a0438900e3cfda1185faf4",
       "layout": {
         "storage": [
           {
@@ -348,9 +348,9 @@
         }
       }
     },
-    "175ca6b2aa289b27fd941cfed8637cfbaa4f97c101595c8f3058272d30ec446a": {
-      "address": "0xBEc47999DEAcDF639A0644cdaA02C28EFd7260BB",
-      "txHash": "0x6c545ed8e83aedc3becf8e13fab9d3aa94425149dd784c5380d342635a005fe1",
+    "972ec8a35a092d77d9eb5be4c34c1e2d8b27d7799fcb71155b189ed37154f1a2": {
+      "address": "0xb4a85c01951E177A12B53929b11a366A7243e8C3",
+      "txHash": "0xb8c7abe69a31c255521114850b07d9bf297599656bbca4cae003161d6341239e",
       "layout": {
         "storage": [
           {
@@ -427,68 +427,12 @@
             "src": "compiled/HiveManager.sol:870"
           },
           {
-            "label": "initialBlockHeight",
+            "label": "walletSessions",
             "offset": 0,
             "slot": "153",
-            "type": "t_uint256",
+            "type": "t_mapping(t_address,t_uint256)",
             "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:873"
-          },
-          {
-            "label": "initialBlockTime",
-            "offset": 0,
-            "slot": "154",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:874"
-          },
-          {
-            "label": "lambda",
-            "offset": 0,
-            "slot": "155",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:876"
-          },
-          {
-            "label": "nZero",
-            "offset": 0,
-            "slot": "156",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:877"
-          },
-          {
-            "label": "exponent",
-            "offset": 0,
-            "slot": "157",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:878"
-          },
-          {
-            "label": "base",
-            "offset": 0,
-            "slot": "158",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:879"
-          },
-          {
-            "label": "exp",
-            "offset": 0,
-            "slot": "159",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:880"
-          },
-          {
-            "label": "one",
-            "offset": 0,
-            "slot": "160",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:881"
+            "src": "compiled/HiveManager.sol:872"
           }
         ],
         "types": {
@@ -516,363 +460,9 @@
             "label": "contract IHiveToken",
             "numberOfBytes": "20"
           },
-          "t_uint256": {
-            "label": "uint256",
+          "t_mapping(t_address,t_uint256)": {
+            "label": "mapping(address => uint256)",
             "numberOfBytes": "32"
-          },
-          "t_uint8": {
-            "label": "uint8",
-            "numberOfBytes": "1"
-          }
-        }
-      }
-    },
-    "8ad732b22bde6cfff92a0cefe747e032ebcc8142d8c221847cf201f9e3d0aee7": {
-      "address": "0xEaDD8d2cf1f7CacB540772873aBcAEb9b610E9D6",
-      "txHash": "0xf812b24b5ec2b9be8d8e90bdc29b8cdf76be0cc4ed350a063909495d62856fac",
-      "layout": {
-        "storage": [
-          {
-            "label": "_initialized",
-            "offset": 0,
-            "slot": "0",
-            "type": "t_uint8",
-            "contract": "Initializable",
-            "src": "compiled/HiveManager.sol:273",
-            "retypedFrom": "bool"
-          },
-          {
-            "label": "_initializing",
-            "offset": 1,
-            "slot": "0",
-            "type": "t_bool",
-            "contract": "Initializable",
-            "src": "compiled/HiveManager.sol:278"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "1",
-            "type": "t_array(t_uint256)50_storage",
-            "contract": "ContextUpgradeable",
-            "src": "compiled/HiveManager.sol:385"
-          },
-          {
-            "label": "_owner",
-            "offset": 0,
-            "slot": "51",
-            "type": "t_address",
-            "contract": "OwnableUpgradeable",
-            "src": "compiled/HiveManager.sol:403"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "52",
-            "type": "t_array(t_uint256)49_storage",
-            "contract": "OwnableUpgradeable",
-            "src": "compiled/HiveManager.sol:478"
-          },
-          {
-            "label": "_status",
-            "offset": 0,
-            "slot": "101",
-            "type": "t_uint256",
-            "contract": "ReentrancyGuardUpgradeable",
-            "src": "compiled/HiveManager.sol:514"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "102",
-            "type": "t_array(t_uint256)49_storage",
-            "contract": "ReentrancyGuardUpgradeable",
-            "src": "compiled/HiveManager.sol:550"
-          },
-          {
-            "label": "BEE",
-            "offset": 0,
-            "slot": "151",
-            "type": "t_contract(IBeeToken)1016",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:869"
-          },
-          {
-            "label": "HIVE",
-            "offset": 0,
-            "slot": "152",
-            "type": "t_contract(IHiveToken)1006",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:870"
-          },
-          {
-            "label": "initialBlockHeight",
-            "offset": 0,
-            "slot": "153",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:873"
-          },
-          {
-            "label": "initialBlockTime",
-            "offset": 0,
-            "slot": "154",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:874"
-          },
-          {
-            "label": "lambda",
-            "offset": 0,
-            "slot": "155",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:876"
-          },
-          {
-            "label": "nZero",
-            "offset": 0,
-            "slot": "156",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:877"
-          },
-          {
-            "label": "exponent",
-            "offset": 0,
-            "slot": "157",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:878"
-          },
-          {
-            "label": "base",
-            "offset": 0,
-            "slot": "158",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:879"
-          },
-          {
-            "label": "exp",
-            "offset": 0,
-            "slot": "159",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:880"
-          },
-          {
-            "label": "one",
-            "offset": 0,
-            "slot": "160",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:881"
-          }
-        ],
-        "types": {
-          "t_address": {
-            "label": "address",
-            "numberOfBytes": "20"
-          },
-          "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]",
-            "numberOfBytes": "1568"
-          },
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]",
-            "numberOfBytes": "1600"
-          },
-          "t_bool": {
-            "label": "bool",
-            "numberOfBytes": "1"
-          },
-          "t_contract(IBeeToken)1016": {
-            "label": "contract IBeeToken",
-            "numberOfBytes": "20"
-          },
-          "t_contract(IHiveToken)1006": {
-            "label": "contract IHiveToken",
-            "numberOfBytes": "20"
-          },
-          "t_uint256": {
-            "label": "uint256",
-            "numberOfBytes": "32"
-          },
-          "t_uint8": {
-            "label": "uint8",
-            "numberOfBytes": "1"
-          }
-        }
-      }
-    },
-    "0a8b7e8fbaec5e6f3abf9fce4ff97695fbf42d18db9130501149802ebc5bf0a9": {
-      "address": "0xfF332c95CBB1Fa333f471b3F9eAd54286BE44eC5",
-      "txHash": "0x397fa83d650de1c96a81b3e9df78cf335afcdc09e5793a661b69018ef6634fb1",
-      "layout": {
-        "storage": [
-          {
-            "label": "_initialized",
-            "offset": 0,
-            "slot": "0",
-            "type": "t_uint8",
-            "contract": "Initializable",
-            "src": "compiled/HiveManager.sol:273",
-            "retypedFrom": "bool"
-          },
-          {
-            "label": "_initializing",
-            "offset": 1,
-            "slot": "0",
-            "type": "t_bool",
-            "contract": "Initializable",
-            "src": "compiled/HiveManager.sol:278"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "1",
-            "type": "t_array(t_uint256)50_storage",
-            "contract": "ContextUpgradeable",
-            "src": "compiled/HiveManager.sol:385"
-          },
-          {
-            "label": "_owner",
-            "offset": 0,
-            "slot": "51",
-            "type": "t_address",
-            "contract": "OwnableUpgradeable",
-            "src": "compiled/HiveManager.sol:403"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "52",
-            "type": "t_array(t_uint256)49_storage",
-            "contract": "OwnableUpgradeable",
-            "src": "compiled/HiveManager.sol:478"
-          },
-          {
-            "label": "_status",
-            "offset": 0,
-            "slot": "101",
-            "type": "t_uint256",
-            "contract": "ReentrancyGuardUpgradeable",
-            "src": "compiled/HiveManager.sol:514"
-          },
-          {
-            "label": "__gap",
-            "offset": 0,
-            "slot": "102",
-            "type": "t_array(t_uint256)49_storage",
-            "contract": "ReentrancyGuardUpgradeable",
-            "src": "compiled/HiveManager.sol:550"
-          },
-          {
-            "label": "BEE",
-            "offset": 0,
-            "slot": "151",
-            "type": "t_contract(IBeeToken)1016",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:869"
-          },
-          {
-            "label": "HIVE",
-            "offset": 0,
-            "slot": "152",
-            "type": "t_contract(IHiveToken)1006",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:870"
-          },
-          {
-            "label": "initialBlockHeight",
-            "offset": 0,
-            "slot": "153",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:873"
-          },
-          {
-            "label": "initialBlockTime",
-            "offset": 0,
-            "slot": "154",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:874"
-          },
-          {
-            "label": "lambda",
-            "offset": 0,
-            "slot": "155",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:876"
-          },
-          {
-            "label": "nZero",
-            "offset": 0,
-            "slot": "156",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:877"
-          },
-          {
-            "label": "exponent",
-            "offset": 0,
-            "slot": "157",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:878"
-          },
-          {
-            "label": "base",
-            "offset": 0,
-            "slot": "158",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:879"
-          },
-          {
-            "label": "exp",
-            "offset": 0,
-            "slot": "159",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:880"
-          },
-          {
-            "label": "one",
-            "offset": 0,
-            "slot": "160",
-            "type": "t_uint256",
-            "contract": "HiveManager",
-            "src": "compiled/HiveManager.sol:881"
-          }
-        ],
-        "types": {
-          "t_address": {
-            "label": "address",
-            "numberOfBytes": "20"
-          },
-          "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]",
-            "numberOfBytes": "1568"
-          },
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]",
-            "numberOfBytes": "1600"
-          },
-          "t_bool": {
-            "label": "bool",
-            "numberOfBytes": "1"
-          },
-          "t_contract(IBeeToken)1016": {
-            "label": "contract IBeeToken",
-            "numberOfBytes": "20"
-          },
-          "t_contract(IHiveToken)1006": {
-            "label": "contract IHiveToken",
-            "numberOfBytes": "20"
           },
           "t_uint256": {
             "label": "uint256",

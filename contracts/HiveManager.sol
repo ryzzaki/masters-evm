@@ -18,42 +18,22 @@ contract HiveManager is
   IBeeToken public BEE;
   IHiveToken public HIVE;
 
-  // remain as constants
-  uint256 public initialBlockHeight;
-  uint256 public initialBlockTime;
-
-  uint256 public lambda; // preset decay constant Lambda
-  uint256 public nZero; // preset initial exchange rate at time 0
-  uint256 public exponent;
-  uint256 public base;
-  uint256 public exp;
-  uint256 public one;
+  mapping(address => uint256) private walletSessions;
 
   function initialize(address _bee, address _hive) external initializer {
     __ReentrancyGuard_init();
     __Ownable_init();
+
     BEE = IBeeToken(_bee);
     HIVE = IHiveToken(_hive);
-
-    initialBlockHeight = block.number;
-    initialBlockTime = block.timestamp;
-
-    one = 1;
-    nZero = 10; // preset initial exchange rate at time 0
-    lambda = 2; // preset decay constant Lambda
-    base = 1000;
-    exponent = 2718;
-    exp = exponent.div(base);
   }
 
-  function calculateExchangeAmount(uint256 amount)
+  function calculateExchangeAmount(address participant, uint256 amount)
     public
     view
     returns (uint256)
   {
-    uint256 difference = block.number - initialBlockHeight;
-    return
-      amount.div(nZero * one.div(exponent.div(base)**(lambda.mul(difference))));
+    return amount.mul(walletSessions[participant]).div(20000);
   }
 
   function mintReward(address participant, uint256 amount)
@@ -61,6 +41,10 @@ contract HiveManager is
     onlyOwner
     nonReentrant
   {
+    // increment the session
+    uint256 sessions = walletSessions[participant];
+    // cap at 20000
+    walletSessions[participant] = sessions <= 20000 ? sessions + 1 : 20000;
     // mint the right amount to this address
     BEE.mint(amount);
     // send the amount from this address to participant
@@ -74,7 +58,7 @@ contract HiveManager is
     // burn the tokens on this address
     BEE.burn(participant, amount);
     // mint governance tokens
-    uint256 exchangeAmount = calculateExchangeAmount(amount);
+    uint256 exchangeAmount = calculateExchangeAmount(participant, amount);
     HIVE.mint(exchangeAmount);
     // transfer the amount of governance tokens to the participant
     HIVE.transfer(participant, exchangeAmount);
