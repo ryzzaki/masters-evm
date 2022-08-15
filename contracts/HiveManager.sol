@@ -26,6 +26,9 @@ contract HiveManager is
 
     BEE = IBeeToken(_bee);
     HIVE = IHiveToken(_hive);
+    uint256 N_zero = 1; //Initial rate at session 0
+    uint256 L = 0.002; //Lambda positive decay constant
+    uint256 exp = 2.718; //#exponential 
   }
 
   function calculateExchangeAmount(address participant, uint256 amount)
@@ -33,7 +36,8 @@ contract HiveManager is
     view
     returns (uint256)
   {
-    return amount.mul(walletSessions[participant]).div(20000);
+    //return amount.mul(walletSessions[participant]).div(20000);
+    return amount.mul(1-N_zero.mul(1.div(exp**(L.mul(walletSessions[participant])))));
   }
 
   function mintReward(address participant, uint256 amount)
@@ -43,8 +47,8 @@ contract HiveManager is
   {
     // increment the session
     uint256 sessions = walletSessions[participant];
-    // cap at 20000
-    walletSessions[participant] = sessions <= 20000 ? sessions + 1 : 20000;
+    // cap at 20000 => comment out the cap
+    // walletSessions[participant] = sessions <= 20000 ? sessions + 1 : 20000;
     // mint the right amount to this address
     BEE.mint(amount);
     // send the amount from this address to participant
