@@ -26,9 +26,9 @@ contract HiveManager is
 
     BEE = IBeeToken(_bee);
     HIVE = IHiveToken(_hive);
-    uint256 N_zero = 1; //Initial rate at session 0
-    uint256 L = 0.002; //Lambda positive decay constant
-    uint256 exp = 2.718; //#exponential 
+    uint N_zero = 1; //Initial rate at session 0
+    uint L = 0.002; //Lambda positive decay constant
+    uint exp = 2.718; //#exponential 
   }
 
   function calculateExchangeAmount(address participant, uint256 amount)
