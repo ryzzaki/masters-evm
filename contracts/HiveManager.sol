@@ -47,8 +47,8 @@ contract HiveManager is
   {
     // increment the session
     uint256 sessions = walletSessions[participant];
-    // cap at 20000 => comment out the cap
-    // walletSessions[participant] = sessions <= 20000 ? sessions + 1 : 20000;
+    // cap at 20000
+    walletSessions[participant] = sessions <= 20000 ? sessions + 1 : 20000;
     // mint the right amount to this address
     BEE.mint(amount);
     // send the amount from this address to participant
