@@ -19,6 +19,10 @@ contract HiveManager is
   IHiveToken public HIVE;
 
   mapping(address => uint256) private walletSessions;
+  
+  uint256 public N_zero;
+  uint256 public L;
+  uint256 public exp;
 
   function initialize(address _bee, address _hive) external initializer {
     __ReentrancyGuard_init();
@@ -26,9 +30,9 @@ contract HiveManager is
 
     BEE = IBeeToken(_bee);
     HIVE = IHiveToken(_hive);
-    uint N_zero = 1; //Initial rate at session 0
-    uint L = 0.002; //Lambda positive decay constant
-    uint exp = 2.718; //#exponential 
+    N_zero = 1; //Initial rate at session 0
+    L = 0.002; //Lambda positive decay constant
+    exp = 2.718; //#exponential 
   }
 
   function calculateExchangeAmount(address participant, uint256 amount)
