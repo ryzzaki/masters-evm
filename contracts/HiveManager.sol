@@ -19,6 +19,10 @@ contract HiveManager is
   IHiveToken public HIVE;
 
   mapping(address => uint256) private walletSessions;
+  
+  uint256 public N_zero;
+  uint256 public L;
+  uint256 public exp;
 
   function initialize(address _bee, address _hive) external initializer {
     __ReentrancyGuard_init();
@@ -26,6 +30,9 @@ contract HiveManager is
 
     BEE = IBeeToken(_bee);
     HIVE = IHiveToken(_hive);
+    N_zero = 1; //Initial rate at session 0
+    L = 0.002; //Lambda positive decay constant
+    exp = 2.718; //#exponential 
   }
 
   function calculateExchangeAmount(address participant, uint256 amount)
@@ -33,7 +40,8 @@ contract HiveManager is
     view
     returns (uint256)
   {
-    return amount.mul(walletSessions[participant]).div(20000);
+    //return amount.mul(walletSessions[participant]).div(20000);
+    return amount.mul(1-N_zero.mul(1.div(exp**(L.mul(walletSessions[participant])))));
   }
 
   function mintReward(address participant, uint256 amount)
